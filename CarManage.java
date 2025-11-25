@@ -76,7 +76,7 @@ public class CarManage {
         Car carDetails=null;
         for (Car car : cars){
             if (car != null){
-                if (findcarNumber.equals(car.getcarNumber())){
+                if (findcarNumber.equals(car.getCarNumber())){
                     carDetails = car;
             }
         }
@@ -108,7 +108,7 @@ public class CarManage {
     private boolean deletecarDetails(String deletecarNumber){
         int index = -1;
         for (int i = 0; i < this.cars.length; i++){
-            if (cars[i].getcarNumber() != null && cars[i].getcarNumber().equals(deletecarNumber)){
+            if (cars[i].getCarNumber() != null && cars[i].getCarNumber().equals(deletecarNumber)){
                 index = i; //find the place that need to delete
                 break;           
         }   
@@ -128,14 +128,13 @@ public class CarManage {
     
      //Add Car
     private void addCar(){
-        Scanner input = new Scanner(System.in);        
-        
+           
         System.out.println("Enter car model:");
-        String model = input.next();
+        String model = scanner.next();
         System.out.println("Enter car yearmade:");
-        int yearMade = input.nextInt();
+        int yearMade = scanner.nextInt();
         System.out.println("Enter car number:");
-        String carNumber = input.next();    
+        String carNumber = scanner.next();    
 
         Car carDetails = new Car (model, yearMade, carNumber);
         if (this.addcarDetails(carDetails)){
@@ -147,15 +146,13 @@ public class CarManage {
     }    
     
     private boolean addcarDetails(Car carDetails){
-        boolean flag = true;
         for (int i = 0; i < cars.length; i++ ){
             if (cars[i] == null){
                 cars[i] = carDetails;
-                flag = true;
-                break;
+                return true;
             }
         }
-        return flag;
+        return false;
     }
     
 public static void main(String[] args) {    
@@ -164,3 +161,4 @@ public static void main(String[] args) {
     a.Menu();
 }    
 }
+
