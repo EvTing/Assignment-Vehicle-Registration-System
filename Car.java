@@ -22,20 +22,20 @@ public class Car {
       
     
     //getters
-    public String getmodel(){
+    public String getModel(){
         return model;
     }
     
-    public int getyearMade(){
+    public int getYearMade(){
         return yearMade;
     }
     
-    public String getcarNumber(){
+    public String getCarNumber(){
         return carNumber;
     }
     
     //setters
-    public void setcarNumber(String carNumber){
+    public void setCarNumber(String carNumber){
         this.carNumber=carNumber;
     }
 
@@ -45,5 +45,15 @@ public class Car {
         System.out.println("Year Made:" +this.yearMade);
         System.out.println("Car Number:" +this.carNumber);
 
-    }        
+    }
+    
+    // Compare this car's number with another car
+    public void compareCarNumber(Car otherCar) {
+        if (this.carNumber != null && this.carNumber.equals(otherCar.getCarNumber())) {
+            System.out.println("Car numbers are the same.");
+        } else {
+            System.out.println("Car numbers are different.");
+        }
+    }
 }
+
